@@ -1,8 +1,21 @@
 
-var welcomeScreen = document.querySelector("#welcome")
+var welcomeScreen = document.querySelector("#welcome");
 function closeWindow(element) {
-    element.style.display = "none"
+    element.style.display = "none";
 }
+function openWindow(element){
+    element.style.display = "flex";
+}
+var welcomeScreenClose = document.querySelector("#welcomeclose");
+var welcomeScreenOpen = document.querySelector("#welcomeopen");
+
+welcomeScreenClose.addEventListener("click", function(){
+    closeWindow(welcomeScreen);
+});
+
+welcomeScreenOpen.addEventListener("click", function(){
+    closeWindow(welcomeScreen);
+});
 
 //time in topbar - works; don't touch
 setInterval(function (){
