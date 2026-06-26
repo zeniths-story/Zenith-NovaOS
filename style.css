@@ -1,4 +1,12 @@
+*{
+ font-family: Futura;
+ box-sizing: border-box;
+ margin: 0 auto;
+}
+
 body{
     background-color: #000226;
-    color: #3a2dc4;
+    color: #3a2dc4;  
+    text-align: center;
+    background-image: url(space.jpg);
 }
