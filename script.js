@@ -5,34 +5,35 @@ setInterval(function () {
 }, 1000);
 
 //clicktest
-document.getElementById("test").onclick = test();
+//document.getElementById("test").onclick =test();
   
-function test() {
-    document.getElementById("test").innerHTML = "test success";
-};
+//function test() {
+    //document.getElementById("test").innerHTML= "success";
+//};
 
 //opening and closing - does not work currently
 //original
 
 var welcomeScreen = document.querySelector("#wlcmescrn");
-
+//var welcomeScreen = document.getElementById("wlcmescrn");
 
 //close
 var welcomeScreenClose = document.querySelector("#wlcmeclose");
 
-welcomeScreenClose.addEventListener("click", function () {
-    closeWindow(welcomeScreen);
-});
-styles
+//welcomeScreenClose.addEventListener("click", function () {
+    //closeWindow(welcomeScreen);
+//});
+
+
 function closeWindow(element) {
     element.style.display = "none";
 }
 //open
 var welcomeScreenOpen = document.querySelector("#wlcmeopen");
 
-welcomeScreenOpen.addEventListener("click", function () {
-    openWindow(welcomeScreen);
-});
+//welcomeScreenOpen.addEventListener("click", function () {
+    //openWindow(welcomeScreen);
+//});
 
 function openWindow(element){
     element.style.display = "flex";
@@ -42,7 +43,7 @@ function openWindow(element){
 
 //welcomeScreenClose.addEventListener("click", closeWindow(welcomeScreen));
 //welcomeScreenOpen.addEventListener("click", openWindow(welcomeScreen));
-
+document.querySelector("#wlcmeclose").onclick = function(){closeWindow()};
 
 //document.querySelector("#welcomeclose").addEventListener("click", function () {
     //closeWindow(document.querySelector("#welcome"));
@@ -58,45 +59,43 @@ function openWindow(element){
 
 //dragging elements - buggy; needs fixed
 
-//dragElement(document.getElementById("wlcmescrn"));
+dragElement(welcomeScreen);
 
-dragElement(welcomeScreen)
+function dragElement(element) {
 
-function dragElement(elmnt) {
-  
   var currX = 0, currY = 0, initX = 0, initY = 0;
 
-  if (document.getElementById(elmnt.id + "header")) {
+  if (document.getElementById(element.id + "header")) {
 
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    document.getElementById(element.id + "header").onmousedown = startDrag;
 
   } else {
 
-    elmnt.onmousedown = dragMouseDown;
+    element.onmousedown = startDrag;
 
   }
 
-  function dragMouseDown(e) {
+  function startDrag(e) {
     e = e || window.event;
     e.preventDefault();
     initX = e.clientX;
     initY = e.clientY;
-    document.onmouseup = closeDragElement;
-    document.onmousemove = elementDrag;
+    document.onmouseup = stopDrag;
+    document.onmousemove = dragElement;
   }
 
-  function elementDrag(e) {
+  function dragElement(e) {
     e = e || window.event;
     e.preventDefault();
-    currX = pos3 - e.clientX;
-    currY = pos4 - e.clientY;
+    currX = initX - e.clientX;
+    currY = initY - e.clientY;
     initX = e.clientX;
     initY = e.clientY;
-    elmnt.style.top = (elmnt.offsetTop - currY) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - currX) + "px";
+    element.style.top = (element.offsetTop - currY) + "px";
+    element.style.left = (element.offsetLeft - currX) + "px";
   }
 
-  function closeDragElement() {
+  function stopDrag() {
     document.onmouseup = null;
     document.onmousemove = null;
   }

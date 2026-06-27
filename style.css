@@ -15,18 +15,6 @@ body{
 
 }
 
-#wlcmescrn {
- border: dotted #93a1d6 5px;
- background-color: #000222;
- width: fit-content;
- border-radius: 20px;
- padding: 10px;
- position: absolute;
- top:50%;
- left:50%;
- transform: translate( -50%, -50%);
-}
-
 .topbar{
     background-color: #000222dd;
     border: none;
@@ -40,6 +28,17 @@ body{
     width: 100%;
 }
 
+#wlcmescrn {
+ border: dotted #93a1d6 5px;
+ background-color: #000222;
+ width: fit-content;
+ border-radius: 20px;
+ padding: 10px;
+ position: absolute;
+ top:50%;
+ left:50%;
+ transform: translate( -50%, -50%);
+}
 
 #wlcmescrnheader{
     width: 90%;
