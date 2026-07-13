@@ -10,8 +10,9 @@ setInterval(function () {
 //document.getElementById("wlcmeclose").onclick =test();
   
 function test() {
-    document.getElementById("test").innerHTML= "success";
     closeWindow(welcomeScreen);
+    document.getElementById("test").innerHTML= "success";
+  
 };
 
 
@@ -21,10 +22,9 @@ function test() {
 
 //opening and closing - does not work currently
 
-//original
 //defining screens
 var welcomeScreen = document.querySelector("#wlcmescrn");
-//var welcomeScreen = document.getElementById("wlcmescrn");
+var welcomeScreen = document.getElementById("wlcmescrn");
 
 //close def.
 var welcomeScreenClose = document.querySelector("#wlcmeclose");
@@ -49,27 +49,6 @@ welcomeScreenClose.addEventListener("click", function () {
 welcomeScreenOpen.addEventListener("click", function () {
     openWindow(welcomeScreen);
 });
-
-
-
-
-
-//other/messing around
-
-//welcomeScreenClose.addEventListener("click", closeWindow(welcomeScreen));
-//welcomeScreenOpen.addEventListener("click", openWindow(welcomeScreen));
-//document.querySelector("#wlcmeclose").onclick = function(){closeWindow()};
-//onclick = function(){closeWindow()};
-//document.querySelector("#wlcmeclose").onclick(closeWindow());
-
-//document.querySelector("#welcomeclose").addEventListener("click", function () {
-    //closeWindow(document.querySelector("#welcome"));
-//});
-
-//document.querySelector("#welcomeopen").addEventListener("click", function () {
-    //openWindow(document.querySelector("#welcome"));
-//});
-
 
 
 
@@ -110,8 +89,8 @@ function dragElement(element) {
     currY = initY - e.clientY;
     initX = e.clientX;
     initY = e.clientY;
-    element.style.top = (element.offsetTop - currY) + "px";
-    element.style.left = (element.offsetLeft - currX) + "px";
+    element.StyleSheet.top = (element.offsetTop - currY) + "px";
+    element.StyleSheet.left = (element.offsetLeft - currX) + "px";
   }
 
   function stopDrag() {
