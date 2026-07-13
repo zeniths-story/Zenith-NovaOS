@@ -5,26 +5,26 @@
     <link href="/style.css" rel="stylesheet"/>
   </head>
 
- <body>
-<script src="/script.js"></script>
+  <body>
+    <script src="/script.js"></script>
 
 <!-- Top bar-->
-<div class="topbar">
-  <p><a id="wlcmeopen" onclick="openWindow()">WW</a> 
+  <div class="topbar">
+    <p><a id="wlcmeopen" onclick="openWindow()">WelcWind</a> 
     <a href="https://apod.nasa.gov/apod/ap260622.html">Bg</a></p>
 
-  <p>Nova OS</p>
-  <p id="timeOfEarth">earthtime</p> <!--time string-->
+    <p>Nova OS</p>
+    <p id="timeOfEarth">earthtime</p> <!--time string-->
 
-</div>
+  </div>
 
 <!-- Welcome Window-->
-  <div  class="window" id="wlcmescrn">
+  <div  class="window" id="wlcmescrn" onclick="closeWindow()"
+  style="cursor: pointer; display: flex;">
+
     <div id="wlcmescrnheader">
-
-      <p onclick="closeWindow()" id="wlcmeclose" 
-      style="cursor: pointer; display: flex; justify-content: center;"> close </p>
-
+      <p id="wlcmeclose" style="cursor: pointer;"
+      >Close</p>
     </div>
 
     <h1>Nova OS</h1>
@@ -34,7 +34,13 @@
     <p id="test" onclick="test()">test</p>
   </div>
 
-<!-- onclick="test()" -->
+<!-- onclick="test()" onclick="closeWindow()" -->
+
+
+
+
+
+
 
   </body>
 

@@ -4,46 +4,63 @@ setInterval(function () {
     document.querySelector("#timeOfEarth").innerHTML = new Date().toLocaleString();
 }, 1000);
 
+
+
 //clicktest
-//document.getElementById("test").onclick =test();
+//document.getElementById("wlcmeclose").onclick =test();
   
-//function test() {
-    //document.getElementById("test").innerHTML= "success";
-//};
+function test() {
+    document.getElementById("test").innerHTML= "success";
+    closeWindow(welcomeScreen);
+};
+
+
+
+
+
 
 //opening and closing - does not work currently
-//original
 
+//original
+//defining screens
 var welcomeScreen = document.querySelector("#wlcmescrn");
 //var welcomeScreen = document.getElementById("wlcmescrn");
 
-//close
+//close def.
 var welcomeScreenClose = document.querySelector("#wlcmeclose");
 
-//welcomeScreenClose.addEventListener("click", function () {
-    //closeWindow(welcomeScreen);
-//});
-
-
 function closeWindow(element) {
-    element.style.display = "none";
+    StyleSheet.display = "none";
+
 }
-//open
+
+//open def.
 var welcomeScreenOpen = document.querySelector("#wlcmeopen");
 
-//welcomeScreenOpen.addEventListener("click", function () {
-    //openWindow(welcomeScreen);
-//});
-
 function openWindow(element){
-    element.style.display = "flex";
+    StyleSheet.display = "flex";
 }
+
+//open/close commands
+welcomeScreenClose.addEventListener("click", function () {
+    closeWindow(welcomeScreen);
+});
+
+welcomeScreenOpen.addEventListener("click", function () {
+    openWindow(welcomeScreen);
+});
+
+
+
+
 
 //other/messing around
 
 //welcomeScreenClose.addEventListener("click", closeWindow(welcomeScreen));
 //welcomeScreenOpen.addEventListener("click", openWindow(welcomeScreen));
-document.querySelector("#wlcmeclose").onclick = function(){closeWindow()};
+//document.querySelector("#wlcmeclose").onclick = function(){closeWindow()};
+//onclick = function(){closeWindow()};
+//document.querySelector("#wlcmeclose").onclick(closeWindow());
 
 //document.querySelector("#welcomeclose").addEventListener("click", function () {
     //closeWindow(document.querySelector("#welcome"));
@@ -58,9 +75,11 @@ document.querySelector("#wlcmeclose").onclick = function(){closeWindow()};
 
 
 //dragging elements - buggy; needs fixed
-
+//elements we (are trying to) drag
 dragElement(welcomeScreen);
 
+
+//defining dragElement
 function dragElement(element) {
 
   var currX = 0, currY = 0, initX = 0, initY = 0;
