@@ -22,9 +22,11 @@
   <div  class="window" id="wlcmescrn" onclick="closeWindow()"
   style="cursor: pointer; display: flex;">
 
-    <div id="wlcmescrnheader">
-      <p id="wlcmeclose" style="cursor: pointer;"
-      >Close</p>
+    <div class="windowheader" id="wlcmescrnheader">
+      <div class="closebtn" id="wlcmeclose" style="cursor: pointer;">
+       <p>X</p>
+      </div>
+      <p>WelcWind</p>
     </div>
 
     <h1>Nova OS</h1>
@@ -36,9 +38,31 @@
 
 <!-- onclick="test()" onclick="closeWindow()" -->
 
+<!--Apps-->
 
+<div id="apps">
 
+  <div class="apps">
+      <img src="./novanotes.PNG" 
+      style="width: 64px; height: 64px; border-radius: 20px;">
+      <p>Nova <br/> Notes</p>
+  </div>    
 
+  <div class="window" id="NovaNotes" 
+    style="cursor: pointer; display: flex;">
+    <div class="windowheader" id="NovaNotesheader">
+      <div class="closebtn" id="novanotesclose" style="cursor: pointer;">
+       <p>X</p>
+      </div>
+      <p>Nova Notes</p>
+    </div>
+
+    
+    <p> notesstuffs</p>
+  </div>
+  
+
+</div>
 
 
 

@@ -28,9 +28,10 @@ var welcomeScreen = document.getElementById("wlcmescrn");
 
 //close def.
 var welcomeScreenClose = document.querySelector("#wlcmeclose");
+var welcomeScreenClose = document.getElementById("#wlcmeclose");
 
 function closeWindow(element) {
-    StyleSheet.display = "none";
+    style.display = "none";
 
 }
 
@@ -38,7 +39,7 @@ function closeWindow(element) {
 var welcomeScreenOpen = document.querySelector("#wlcmeopen");
 
 function openWindow(element){
-    StyleSheet.display = "flex";
+    style.display = "flex";
 }
 
 //open/close commands
@@ -53,9 +54,16 @@ welcomeScreenOpen.addEventListener("click", function () {
 
 
 
+
+
+
+
+
+
 //dragging elements - buggy; needs fixed
 //elements we (are trying to) drag
 dragElement(welcomeScreen);
+dragElement(document.querySelector("#NovaNotes"))
 
 
 //defining dragElement
@@ -97,4 +105,32 @@ function dragElement(element) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
+}
+
+
+
+
+
+
+//app stuff
+var slectIcon = undefined
+
+function selectIcon(element) {
+  element.classList.add("slect")
+  slectIcon = element
+}
+
+function deselectIcon(element) {
+  element.classList.remove("slect")
+  slectIcon = undefined
+}
+
+function handleIconSlect(element) {
+  if (element.classList.contains("slect")){
+    deselectIcon(element)
+    openWindow(window)
+  } else {
+    selectIcon(element)
+  }
+  
 }
