@@ -11,11 +11,10 @@ var highindx = 1;
 var welcomeScreen = document.getElementById("wlcmescrn");
 var notesScreen = document.getElementById("NovaNotes");
 
-
 //dragging elements
 //elements we can drag
 dragElement(welcomeScreen);
-dragElement(notesScreen);
+//dragElement(notesScreen);
 
 //defining dragElement
 function dragElement(element) {
@@ -50,27 +49,27 @@ function dragElement(element) {
 };
 
 //app stuff
-var slectIcon = undefined;
+//var slectIcon = undefined;
 
-function selectIcon(element) {
-  element.classList.add("slect");
-  slectIcon = element;
-};
+//function selectIcon(element) {
+  //element.classList.add("slect");
+  //slectIcon = element;
+//};
 
-function deselectIcon(element) {
-  element.classList.remove("slect");
-  slectIcon = undefined;
-};
+//function deselectIcon(element) {
+  //element.classList.remove("slect");
+  //slectIcon = undefined;
+//};
 
-function handleIconSlect(element) {
-  if (element.classList.contains("slect")){
-    deselectIcon(element);
-    openWindow(window);
-  } else {
-    selectIcon(element);
-  };
+//function handleIconSlect(element) {
+  //if (element.classList.contains("slect")){
+   // deselectIcon(element);
+   // openWindow(window);
+ // } else {
+ //   selectIcon(element);
+//  };
   
-};
+//};
 
 //opening and closing
 
@@ -93,8 +92,6 @@ function openWindow(element){
     topBar.style.zIndex = highindx + 1
 };
 
-
-
 //open/close commands
 welcomeScreenClose.addEventListener("click", function () {
     closeWindow(welcomeScreen);
@@ -105,37 +102,30 @@ welcomeScreenOpen.addEventListener("click", function () {
 });
 
 
-notesclose.addEventListener("click", function () {
-    closeWindow(notesScreen);
-});
-
-
-
+//notesclose.addEventListener("click", function () {
+    //closeWindow(notesScreen);
+//});
 
 //window tap handling
 
-function handWindTap (element) {
-  highindx++;
-  element.style.zIndex = highindx
-  deselectIcon(slectIcon)
-};
+//function handWindTap (element) {
+ // highindx++;
+ // element.style.zIndex = highindx
+  //deselectIcon(slectIcon)
+//};
 
-function addWindTapHand(element){
-  element.addEventListener("click", function(){ 
-    handWindTap(element)
-  });
-};
+//function addWindTapHand(element){
+ // element.addEventListener("click", function(){ 
+ //   handWindTap(element)
+//  });
+//};
 
 //initilizing windows
-function initwind(elementName) {
-  var screen = document.querySelector("#"+ elementName);
-  addWindTapHand(screen)
-  dragElement(screen)
+//function initwind(elementName) {
+  //var screen = document.querySelector("#"+ elementName);
+  //addWindTapHand(screen)
+  //dragElement(screen)
   //makeCloseable(elementName);
-}
-
-
-
-
+//}
 
 //initwind(notesScreen)

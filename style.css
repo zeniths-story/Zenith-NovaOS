@@ -15,10 +15,6 @@ body{
 
 }
 
-p{
- width: fit-content;
-}
-
 .topbar{
     background-color: #000222dd;
     border: none;
@@ -34,21 +30,27 @@ p{
     border: dotted #93a1d6 5px;
     background-color: #000222;
     min-width: fit-content;
+    max-width: 500px;
     border-radius: 20px;
     padding: 10px;
+    position: absolute;
+    top:50%;
+    left:50%; 
+    transform: translate( -50%, -50%);
+    cursor: pointer; 
+    display: flex;
     flex-direction: column;
 }
 
 .windowheader{
-    width: 90%;
+    width: 100%;
     height: 20%;
     color:#9734d1;
+    text-align: left;
     background-color: #6d1365;
-    border: none;
-    text-align: center;
+    border-radius: 5px;
     font-family: sans-serif;
-    flex-direction: row-reverse;
-
+   
 }
 
 .closebtn{
@@ -57,11 +59,12 @@ p{
     padding: 0px 5px;
     border-radius: 4px;
     color: red;
+    cursor: pointer;
 }
 
 .apps{
     padding: 64px 16px;
-    text-align: left;
+    text-align: center;
     padding: 15px;
     width: fit-content;
     filter: drop-shadow(0 0 10px rgb(240, 67, 67));
@@ -86,6 +89,6 @@ p{
     
 }
 
-.slect{
-    border: solid aqua 1px;
+.slect img{
+    border: solid rgb(44, 182, 247) 2px;
 }
