@@ -6,11 +6,11 @@
   </head>
 
   <body>
-    <script src="/script.js"></script>
+    
 
 <!-- Top bar-->
   <div id="top" class="topbar">
-    <p><a id="wlcmeopen" onclick="openWindow()">WelcWind</a> 
+    <p><a id="wlcmeopen">WelcWind</a> 
     <a href="https://apod.nasa.gov/apod/ap260622.html">Bg</a></p>
 
     <p>Nova OS</p>
@@ -19,32 +19,39 @@
   </div>
 
 <!-- Welcome Window-->
-  <div  class="window" id="wlcmescrn" onclick="closeWindow()"
-  style="cursor: pointer; display: flex;">
+  <div id="wlcmescrn" class="window"
+  style="
+  cursor: pointer; 
+  display: flex; 
+  position: absolute;
+    top:50%;
+    left:50%; 
+    transform: translate( -50%, -50%);">
 
     <div class="windowheader" id="wlcmescrnheader">
       <div class="closebtn" id="wlcmeclose" style="cursor: pointer;">
        <p>X</p>
       </div>
+      <div>
       <p>WelcWind</p>
+      </div>
     </div>
 
     <h1>Nova OS</h1>
     <p> This is my <em>very </em>wip os</p>
-
-
-    <p id="test" onclick="test()">test</p>
   </div>
 
 <!-- onclick="test()" onclick="closeWindow()" -->
+
+
+
 
 <!--App icons-->
 
 <div id="apps">
 
   <div class="apps">
-      <img src="./novanotes.PNG" 
-      style="width: 64px; height: 64px; border-radius: 20px;">
+      <img src="./novanotes.PNG">
       <p>Nova <br/> Notes</p>
   </div>    
   
@@ -52,10 +59,10 @@
 </div>
 
 <div class="window" id="NovaNotes" 
-    style="cursor: pointer; display: flex;">
+    style="cursor: pointer; display: none;">
     <div class="windowheader" id="NovaNotesheader">
       <div class="closebtn" id="novanotesclose" style="cursor: pointer;">
-       <p>X</p>
+        <p>X</p>
       </div>
       <p>Nova Notes</p>
     </div>
@@ -64,7 +71,7 @@
     <p> notesstuffs</p>
   </div>
 
-
+  <script src="/script.js"></script>
   </body>
 
 </html>
