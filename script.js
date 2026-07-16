@@ -18,8 +18,8 @@ dragElement(document.getElementById("novaNotes"))
 //defining dragElement
 function dragElement(element) {
   var currX = 0, currY = 0, initX = 0, initY = 0;
-  if (document.getElementById(element + "header")) {
-    document.getElementById(element + "header").onmousedown = startDrag;
+  if (document.getElementById(element.id + "header")) {
+    document.getElementById(element.id + "header").onmousedown = startDrag;
   } else {
     element.onmousedown = startDrag;
   };
@@ -140,20 +140,30 @@ function initWind(elementName){
 
 var content = [
   {
-    title: "7/15/26",
+    title: "struggles",
+    date: "7/15/26",
     content: `
     <p contenteditable="true"> javascript doesn't like me very much. 
     <br> What am I doing wrong??? 
     <br/>Why no able read addEventListener??</p>
    <br />`,
   },
+  {
+    title: `<p contenteditable = "true"> Title </p>`,
+    date: "7/16/26",
+    content: `
+    <p contenteditable="true">
+    start typing here
+    </p>`
+  }
 ];
 
-function newNote(index) {
+function setNoteContent(index) {
   var notetext = document.getElementById("noteText");
   notetext.innerHTML = content[index].content;
-  
 };
+
+setNoteContent(0)
 
 function addToSideBar(index) {
   var sidebar = document.getElementById("sidebar");
@@ -168,7 +178,7 @@ function addToSideBar(index) {
   </p>`;
 
   newDiv.addEventListener("click", function(){
-    newNote(index);
+    setNoteContent(index);
   });
   sidebar.appendChild(newDiv);
 };

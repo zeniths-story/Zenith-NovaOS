@@ -79,9 +79,27 @@ body{
     border: solid aqua 2px;
 }
 
-#sidebar {
-    background-color: #9734d1;
-    border-radius: 5px;
-    padding: 7px;
-    margin: 4px;
+#novaNotes{
+    width: 400px;
+    height: 290px;
 }
+
+.content{
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+#sidebar {
+    background-color: #5b1e7e;
+    color: #9734d1;
+    padding: 5px;
+    border-radius: 5px;
+    overflow-y: auto;
+
+}
+
+#noteText{
+    max-width: 230px;
