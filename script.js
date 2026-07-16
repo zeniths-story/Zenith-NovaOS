@@ -79,8 +79,8 @@ welcomeScreenOpen.addEventListener("click", function () {
     openWindow(welcomeScreen);
 });
 
-nnopen.addEventListener("click", () => openWindow(novaNotes));
-nnclose.addEventListener("click", () => closeWindow(novaNotes));
+novaNotesopen.addEventListener("click", () => openWindow(novaNotes));
+novaNotesclose.addEventListener("click", () => closeWindow(novaNotes));
 
 //function makeClose(element) {
  //
@@ -112,11 +112,11 @@ function handIconTap(element){
 
 var highIndex = 1;
 
-//function addWindTapHand(element) {
-  //element.addEventListener("click", function () {
-    //handWindTap(element)
-  //});
-//};
+function addWindTapHand(element) {
+  element.addEventListener("mouseDown", function () {
+   handWindTap(element)
+  });
+};
 
 function handWindTap(element) {
   highIndex++;
@@ -128,15 +128,15 @@ function handWindTap(element) {
 var topBar = document.getElementById("top")
 
 function initWind(elementName){
-  var screen = document.getElementById(elementName);
-  //addWindTapHand(screen);
-  //dragElement(screen);
-  //makeClose(elementName);
+  var screen = document.getElementById("elementName");
+  addWindTapHand(screen);
+  dragElement(screen);
+  makeClose(elementName);
 };
 
 //initilized windows
 //initWind(welcomeScreen);
-//initWind(novaNotes);
+initWind(novaNotes);
 
 var content = [
   {
