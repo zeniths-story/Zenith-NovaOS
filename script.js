@@ -83,6 +83,7 @@ nnopen.addEventListener("click", () => openWindow(novaNotes));
 nnclose.addEventListener("click", () => closeWindow(novaNotes));
 
 //function makeClose(element) {
+ //
   
 //}
 
@@ -111,11 +112,11 @@ function handIconTap(element){
 
 var highIndex = 1;
 
-function addWindTapHand(element) {
-  element.addEventListener("click", function () {
-    handWindTap(element)
-  });
-};
+//function addWindTapHand(element) {
+  //element.addEventListener("click", function () {
+    //handWindTap(element)
+  //});
+//};
 
 function handWindTap(element) {
   highIndex++;
@@ -128,11 +129,50 @@ var topBar = document.getElementById("top")
 
 function initWind(elementName){
   var screen = document.getElementById(elementName);
-  addWindTapHand(screen);
-  dragElement(screen);
-  makeClose(elementName);
+  //addWindTapHand(screen);
+  //dragElement(screen);
+  //makeClose(elementName);
 };
 
 //initilized windows
-initWind(welcomeScreen)
-initWind(novaNotes)
+//initWind(welcomeScreen);
+//initWind(novaNotes);
+
+var content = [
+  {
+    title: "7/15/26",
+    content: `
+    <p contenteditable="true"> javascript doesn't like me very much. 
+    <br> What am I doing wrong??? 
+    <br/>Why no able read addEventListener??</p>
+   <br />`,
+  },
+];
+
+function newNote(index) {
+  var notetext = document.getElementById("noteText");
+  notetext.innerHTML = content[index].content;
+  
+};
+
+function addToSideBar(index) {
+  var sidebar = document.getElementById("sidebar");
+  var note = content[index];
+  var newDiv = document.createElement("div");
+  newDiv.innerHTML = `
+  <p>
+  ${note.title}
+  </p>
+  <p>
+  ${note.date}
+  </p>`;
+
+  newDiv.addEventListener("click", function(){
+    newNote(index);
+  });
+  sidebar.appendChild(newDiv);
+};
+
+for (let i=0; i< content.length; i++) {
+    addToSideBar(i);
+};
