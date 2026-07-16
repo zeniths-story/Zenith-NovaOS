@@ -7,12 +7,14 @@ setInterval(function () {
 
 //defining screens
 var welcomeScreen = document.getElementById("wlcmescrn");
-var novaNotes = document.getElementById("novaNotes")
+var novaNotes = document.getElementById("novaNotes");
+var zenApp = document.getElementById("zenApp");
 
 //dragging elements
 //elements we can drag
 dragElement(welcomeScreen);
-dragElement(novaNotes)
+dragElement(novaNotes);
+dragElement(zenApp)
 
 
 //defining dragElement
@@ -50,8 +52,11 @@ function dragElement(element) {
 //opening and closing
 var welcomeScreenClose = document.getElementById("wlcmeclose");
 var welcomeScreenOpen = document.getElementById("wlcmeopen");
-var nnopen = document.getElementById("nnopen");
-var nnclose = document.getElementById("nnclose");
+var novaNotesopen = document.getElementById("novaNotesopen");
+var novaNotesclose = document.getElementById("novaNotesclose");
+var zenAppopen = document.getElementById("zenAppopen");
+var zenAppclose = document.getElementById("zenAppclose");
+
 
 //close def.
 
@@ -82,11 +87,14 @@ welcomeScreenOpen.addEventListener("click", function () {
 novaNotesopen.addEventListener("click", () => openWindow(novaNotes));
 novaNotesclose.addEventListener("click", () => closeWindow(novaNotes));
 
-//function makeClose(element) {
- //
-  
-//}
+zenAppopen.addEventListener("click", () => openWindow(zenApp));
+zenAppclose.addEventListener("click", () => closeWindow(zenApp));
 
+//function makeClose(element) {
+ //var close = element + "close";
+ //close.addEventListener("click", () => closeWindow(element));
+//};
+//makeClose(novaNotes)
 
 //app stuff
 var selected = undefined;
@@ -138,7 +146,9 @@ function initWind(elementName){
 //initWind(welcomeScreen);
 //initWind(novaNotes);
 
-var content = [
+
+//Nova Notes
+var notecontent = [
   {
     title: "struggles",
     date: "7/15/26",
@@ -172,14 +182,14 @@ var content = [
 
 function setNoteContent(index) {
   var notetext = document.getElementById("noteText");
-  notetext.innerHTML = content[index].content;
+  notetext.innerHTML = notecontent[index].notecontent;
 };
 
 setNoteContent(0)
 
-function addToSideBar(index) {
-  var sidebar = document.getElementById("sidebar");
-  var note = content[index];
+function addToNoteBar(index) {
+  var notebar = document.getElementById("notebar");
+  var note = notecontent[index];
   var newDiv = document.createElement("div");
   newDiv.innerHTML = `
   <p>
@@ -192,9 +202,57 @@ function addToSideBar(index) {
   newDiv.addEventListener("click", function(){
     setNoteContent(index);
   });
-  sidebar.appendChild(newDiv);
+  notebar.appendChild(newDiv);
 };
 
-for (let i=0; i< content.length; i++) {
-    addToSideBar(i);
+for (let i=0; i< notecontent.length; i++) {
+    addToNoteBar(i);
+};
+
+
+//zenApp
+var zencontent = [
+  {
+    zentitle: "About",
+    zencontent: `
+    <p> 
+    Hi, I'm Zenith!<br>
+    I'm 16 and this is my first year doing HackClub!
+    This OS was my first time working with HTML & CSS and a deeper dive into JavaScript.<br>
+    Hope you like it!
+    </p>`,
+  },
+  {
+    zentitle: "Fandoms",
+    zencontent: `
+    <p> 
+    PHM, MHA, ASoUE,
+    </p>`,
+  },
+];
+
+function setZenContent(index) {
+  var zentext = document.getElementById("zentxt");
+  zentext.innerHTML = zencontent[index].zencontent;
+};
+
+setZenContent(0)
+
+function addToZenBar(index) {
+  var zenbar = document.getElementById("zenbar");
+  var zenabt = zencontent[index];
+  var znewDiv = document.createElement("div");
+  znewDiv.innerHTML = `
+  <p>
+  ${zenabt.zentitle}
+  </p>`
+
+  znewDiv.addEventListener("click", function(){
+    setZenContent(index);
+  });
+  zenbar.appendChild(znewDiv);
+};
+
+for (let l=0; l< zencontent.length; l++) {
+    addToZenBar(l);
 };

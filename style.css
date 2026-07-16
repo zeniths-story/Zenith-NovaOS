@@ -70,31 +70,42 @@ body{
     top: 4vh;
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
     height: 96vh;
     color: rgb(0, 183, 255);
+    filter: drop-shadow( 0 0 15px red);
 }
 
 #deskApps img{
     width: 60px;
     height: 60px;
     border-radius: 15px;
-    
-   
 }
 
 .selected img {
     border: solid rgb(0, 225, 255) 2px;
 }
 
-#novaNotes{
-    width: 400px;
-    height: 290px;
-   
+.app{
+    width: fit-content;
+    max-width: 400px;
+    min-width: 100px;
+    height: fit-content;
+    max-height: 290px;  
+    min-height: 100px;
 }
 
-#novaNotesopen{
-    filter: drop-shadow( 0 0 15px red);
+#novaNotes{
+    height: 290px;
+    background-color: #6d1365;
+    color: #000222;
 }
+
+ #novaNotesheader{
+    background-color: #000222;
+    color: #3a2dc4;
+
+ }
 
 #novaNotesopen p {
      filter: drop-shadow( 0 0 8px red);
@@ -106,10 +117,9 @@ body{
     flex-direction: row;
     text-align: left;
     justify-content: flex-start;
-    
 }
 
-#sidebar {
+.sidebar {
     background-color: #5b1e7e;
     color: #9734d1;
     padding: 5px;
@@ -121,13 +131,14 @@ body{
     position: fixed;
 }
 
-#noteText{
+.txt{
     max-width: 230px;
+    position: relative;
+    left: 30px;
 }
 
 .version{
     display: flex;
     justify-content: center;
     align-self: flex-end;
-   
 }
