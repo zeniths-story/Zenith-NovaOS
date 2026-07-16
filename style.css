@@ -64,14 +64,14 @@ body{
 }
 
 #deskApps{
-    border: solid white 1px;
     padding: 64px 16px;
     width: fit-content;
     position: fixed;
+    top: 4vh;
     display: flex;
     align-items: flex-start;
     height: 96vh;
-    color: aqua;
+    color: rgb(0, 183, 255);
 }
 
 #deskApps img{
@@ -83,12 +83,13 @@ body{
 }
 
 .selected img {
-    border: solid aqua 2px;
+    border: solid rgb(0, 225, 255) 2px;
 }
 
 #novaNotes{
     width: 400px;
     height: 290px;
+   
 }
 
 #novaNotesopen{
@@ -105,6 +106,7 @@ body{
     flex-direction: row;
     text-align: left;
     justify-content: flex-start;
+    
 }
 
 #sidebar {
@@ -113,8 +115,19 @@ body{
     padding: 5px;
     border-radius: 5px;
     overflow-y: auto;
-
+    overflow-x: hidden;
+    max-width: 90px;
+    max-height: 150px;
+    position: fixed;
 }
 
 #noteText{
     max-width: 230px;
+}
+
+.version{
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+   
+}

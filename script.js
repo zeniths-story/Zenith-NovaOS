@@ -12,7 +12,7 @@ var novaNotes = document.getElementById("novaNotes")
 //dragging elements
 //elements we can drag
 dragElement(welcomeScreen);
-dragElement(document.getElementById("novaNotes"))
+dragElement(novaNotes)
 
 
 //defining dragElement
@@ -112,11 +112,11 @@ function handIconTap(element){
 
 var highIndex = 1;
 
-function addWindTapHand(element) {
-  element.addEventListener("mouseDown", function () {
-   handWindTap(element)
-  });
-};
+//function addWindTapHand(element) {
+ // element.addEventListener("mouseDown", function () {
+  // handWindTap(element)
+  //});
+//};
 
 function handWindTap(element) {
   highIndex++;
@@ -129,14 +129,14 @@ var topBar = document.getElementById("top")
 
 function initWind(elementName){
   var screen = document.getElementById("elementName");
-  addWindTapHand(screen);
+  //addWindTapHand(screen);
   dragElement(screen);
   makeClose(elementName);
 };
 
 //initilized windows
 //initWind(welcomeScreen);
-initWind(novaNotes);
+//initWind(novaNotes);
 
 var content = [
   {
@@ -154,6 +154,18 @@ var content = [
     content: `
     <p contenteditable="true">
     start typing here
+    </p>`
+  },
+  {
+    title: `<p> List of projects for NovaOS </p>`,
+    date: "7/16/26",
+    content: `
+    <p contenteditable="true">
+    -Zenith app<br>
+    -"making of" app<br>
+    -PHM app <br>
+    -better handles <br>
+    -<s>app location</s> <br>
     </p>`
   }
 ];
