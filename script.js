@@ -210,49 +210,49 @@ for (let i=0; i< notecontent.length; i++) {
 };
 
 
-//zenApp
-//var zencontent = [
-  //{
-    //zentitle: "About",
-   // zencontent: `
-    //<p> 
-   // Hi, I'm Zenith!<br>
-   // I'm 16 and this is my first year doing HackClub!
-   // This OS was my first time working with HTML & CSS and a deeper dive into JavaScript.<br>
-   // Hope you like it!
-   // </p>`,
- /// },
- // {
-  //  zentitle: "Fandoms",
-  //  zencontent: `
-  //  <p> 
-  //  PHM, MHA, ASoUE,
-  //  </p>`,
-//  },
-//];
+zenApp
+var zencontent = [
+  {
+    zentitle: "About",
+    zencontent: `
+    <p> 
+    Hi, I'm Zenith!<br>
+   I'm 16 and this is my first year doing HackClub!
+    This OS was my first time working with HTML & CSS and a deeper dive into JavaScript.<br>
+    Hope you like it!
+    </p>`,
+  },
+  {
+    zentitle: "Fandoms",
+    zencontent: `
+    <p> 
+    PHM, MHA, ASoUE,
+    </p>`,
+  },
+];
 
-//function setZenContent(index) {
-  //var zentext = document.getElementById("zentxt");
-  //zentext.innerHTML = zencontent[index].zencontent;
-//};
+function setZenContent(index) {
+  var zentext = document.getElementById("zentxt");
+  zentext.innerHTML = zencontent[index].zencontent;
+};
 
-//setZenContent(0)
+setZenContent(0)
 
-//function addToZenBar(index) {
- // var zenbar = document.getElementById("zenbar");
- // var zenabt = zencontent[index];
- // var znewDiv = document.createElement("div");
- // znewDiv.innerHTML = `
- // <p>
- // ${zenabt.zentitle}
- // </p>`;
+function addToZenBar(index) {
+  var zenbar = document.getElementById("zenbar");
+  var zenabt = zencontent[index];
+  var znewDiv = document.createElement("div");
+  znewDiv.innerHTML = `
+  <p>
+  ${zenabt.zentitle}
+  </p>`;
 
- // znewDiv.addEventListener("click", function(){
- //   setZenContent(index);
- // });
- // zenbar.appendChild(znewDiv);
-//};
+  znewDiv.addEventListener("click", function(){
+    setZenContent(index);
+  });
+  zenbar.appendChild(znewDiv);
+};
 
-//for (let l=0; l< zencontent.length; l++) {
-  //  addToZenBar(l);
-//};
+for (let l=0; l< zencontent.length; l++) {
+    addToZenBar(l);
+};
