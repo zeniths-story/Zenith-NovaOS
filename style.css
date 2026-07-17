@@ -122,6 +122,7 @@ body{
     flex-direction: row;
     text-align: left;
     justify-content: flex-start;
+    overflow-y: scroll;
 }
 
 .sidebar {
@@ -131,8 +132,8 @@ body{
     border-radius: 5px;
     overflow-y: auto;
     overflow-x: hidden;
-    max-width: 90px;
-    max-height: 150px;
+    max-width: 78px;
+    max-height: 50%;
     position: fixed;
 }
 

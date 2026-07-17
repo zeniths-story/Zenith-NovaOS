@@ -213,7 +213,7 @@ for (let i=0; i< notecontent.length; i++) {
 //zenApp
 var zencontent = [
   {
-    zentitle: "About",
+    zentitle: "Basic About",
     zencontent: `
     <p> 
     Hi, I'm Zenith!<br>
@@ -226,8 +226,28 @@ var zencontent = [
     zentitle: "Fandoms",
     zencontent: `
     <p> 
-    PHM, MHA, ASoUE,
-    </p>`,
+    PHM, MHA, ASoUE, E:TM, TADC, Owl House, KotLC, Ranboo
+    
+    <a href="https://zeniths-story.carrd.co/#handi" target="blank" > See More </a> </p>`,
+  },
+  {
+    zentitle: "Full About",
+    zencontent: `
+    <p> 
+    Name: Zenith <br/>
+    Pronouns: They/Them <br/>
+    Gender: Fluid <br/>
+    Age: 16 <br/>
+    <br/>
+    Has: Anxiety, (depression?), (AuDHD?), braces, a will to live, (osdd1-b?), three cats <br/>
+    Is: Creative, plural, tired of JS not working, alterhuman<br>
+    Should: probably go outside once in a while, buy more art supplies, have breakfast, 
+    actually focus on school once that starts up, get more exercise <br/>
+
+
+
+    <br/>
+    <a href="https://zeniths-story.carrd.co" target="blank" > Learn More </a> </p>`,
   },
 ];
 
