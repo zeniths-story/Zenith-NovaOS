@@ -2,6 +2,7 @@
 a small OS which is space-themed because I love space :3
 
 Features: 
+
 -Nova Notes
 
 -- a notepad with all my complaints to javascript for being mean
