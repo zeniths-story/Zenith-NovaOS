@@ -149,39 +149,48 @@ function initWind(elementName){
 
 //Nova Notes
 var notecontent = [
+   {
+    date: "About Notes",
+    content: `
+    <p> This app houses a lot of me complaining about javascript as well as OS Updates/Changes</p>`,
+  },
+  {
+    date: "Plans 4 NovaOS",
+    content: `
+    <p contenteditable="true">
+    -Zenith app<br/>
+    -"making of" app<br/>
+    -PHM app? <br/>
+    - settings?<br/>
+    -better handles <br/>
+    -<s>app location</s> <br/>
+    </p>`
+  },
   {
     date: "7/15/26",
     content: `
-    <p contenteditable="true"> javascript doesn't like me very much. 
+    <p> javascript doesn't like me very much. 
     <br> What am I doing wrong??? 
-    <br/>Why no able read addEventListener??</p>
-   <br />`,
+    <br/>Why no able read addEventListener??</p>`,
   },
   {
     date: "7/16/26",
     content: `
     <p>
+    See yesterday + 
     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    </p>`
-  },
-  {
-    date: "Plans for NovaOS",
-    content: `
-    <p contenteditable="true">
-    -Zenith app<br>
-    -"making of" app<br>
-    -PHM app <br>
-    -better handles <br>
-    -<s>app location</s> <br>
     </p>`
   },
    {
     date: "7/18/26",
     content: `
     <p>
-    Fixed notes!<br/>
-    Deleted titles from notes bc cloging sidebar; more like Date/title now
-    changed notes color scheme
+    - Fixed notes!<br/>
+    - Deleted titles from notes bc cloging sidebar; more like Date/title now<br/>
+    - changed notes color scheme<br/>
+    - changed scrollbar color :D<br/>
+    - added slight transparency to WelcWind<br/>
+    - changed header<br/>
     </p>`
   },
 ];
@@ -253,6 +262,25 @@ var zencontent = [
     <br/>
     <a href="https://zeniths-story.carrd.co" target="blank" > Learn More </a> </p>`,
   },
+   //{
+    //zentitle: "Headmates",
+    //zencontent: `
+    //<p>total HM count : 30<br/> HM Shown Here: 11
+    //<ul> 
+      //<li>Danger</li>
+      //<li>Ethan</li>
+      //<li>Evy/Opal</li>
+      //<li>Evi</li>
+      //<li>Hades</li>
+      //<li>Lumi</li>
+      //<li>Null</li>
+      //<li>Reid</li>
+      //<li>Rowan</li>
+      //<li>Rylen</li>
+      //<li>Tommy</li>
+   // </ul>
+   // <a href="https://zeniths-story.carrd.co/#fullabt" target="blank" > See More </a> </p>`,
+  //},
 ];
 
 function setZenContent(index) {
