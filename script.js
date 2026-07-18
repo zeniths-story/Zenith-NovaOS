@@ -14,7 +14,7 @@ var zenApp = document.getElementById("zenApp");
 //elements we can drag
 dragElement(welcomeScreen);
 dragElement(novaNotes);
-dragElement(zenApp)
+dragElement(zenApp);
 
 
 //defining dragElement
@@ -52,11 +52,6 @@ function dragElement(element) {
 //opening and closing
 var welcomeScreenClose = document.getElementById("wlcmeclose");
 var welcomeScreenOpen = document.getElementById("wlcmeopen");
-var novaNotesopen = document.getElementById("novaNotesopen");
-var novaNotesclose = document.getElementById("novaNotesclose");
-var zenAppopen = document.getElementById("zenAppopen");
-var zenAppclose = document.getElementById("zenAppclose");
-
 
 //close def.
 
@@ -72,7 +67,6 @@ function openWindow(element){
     highIndex++;
     element.style.zIndex = highIndex;
     topBar.style.zIndex = highIndex + 1;
-    
 };
 
 //open/close commands
@@ -84,17 +78,21 @@ welcomeScreenOpen.addEventListener("click", function () {
     openWindow(welcomeScreen);
 });
 
-novaNotesopen.addEventListener("click", () => openWindow(novaNotes));
-novaNotesclose.addEventListener("click", () => closeWindow(novaNotes));
+function makeClose(element) {
+ var close = document.getElementById(element.id + "close");
+ close.addEventListener("click", () => closeWindow(element));
+};
+makeClose(novaNotes);
+makeClose(zenApp);
+//makeClose(welcomeScreen);
 
-zenAppopen.addEventListener("click", () => openWindow(zenApp));
-zenAppclose.addEventListener("click", () => closeWindow(zenApp));
-
-//function makeClose(element) {
- //var close = element + "close";
- //close.addEventListener("click", () => closeWindow(element));
-//};
-//makeClose(novaNotes)
+function makeOpen(element) {
+var open = document.getElementById(element.id + "open");
+open.addEventListener("click", () => openWindow(element));
+};
+makeOpen(novaNotes);
+makeOpen(zenApp);
+//makeOpen(welcomeScreen);
 
 //app stuff
 var selected = undefined;
@@ -106,25 +104,21 @@ function selectIcon(element) {
 
 function deselect (element){
   element.classList.remove("selected");
+  console.log(selected);
   selected = undefined;
 };
 
-function handIconTap(element){
-  if (element.classList.contains("selected")) {
-    deselect(element);
-    openWindow(window);
-  } else {
-    selectIcon(element);
-  };
-};
+//function handIconTap(element){
+  //if (element.classList.contains("selected")) {
+   // deselect(element);
+   // openWindow(window);
+  //} else {
+   // selectIcon(element);
+ // };
+//};
 
 var highIndex = 1;
-
-//function addWindTapHand(element) {
- // element.addEventListener("mouseDown", function () {
-  // handWindTap(element)
-  //});
-//};
+var topBar = document.getElementById("top")
 
 function handWindTap(element) {
   highIndex++;
@@ -133,18 +127,29 @@ function handWindTap(element) {
   deselect(selected);
 };
 
-var topBar = document.getElementById("top")
+function addWindTapHand(element) {
+  element.addEventListener("mousedown", function() {
+   handWindTap(element);
+  });
+};
+
+addWindTapHand(novaNotes);
+addWindTapHand(welcomeScreen);
+addWindTapHand(zenApp);
 
 function initWind(elementName){
   var screen = document.getElementById("elementName");
-  //addWindTapHand(screen);
+  addWindTapHand(screen);
   dragElement(screen);
   makeClose(elementName);
+  makeOpen(elementName);
 };
 
 //initilized windows
+
 //initWind(welcomeScreen);
 //initWind(novaNotes);
+//initWind(zenApp);
 
 
 //Nova Notes
