@@ -41,6 +41,10 @@ function dragElement(element) {
   function stopDrag() {
     document.onmouseup = null;
     document.onmousemove = null;
+    sessionStorage.setItem(element.id+"currX", currX);
+    sessionStorage.setItem(element.id+"currY", currY);
+    sessionStorage.setItem(element.id+"topSet", element.offsetTop);
+    sessionStorage.setItem(element.id+"leftSet", element.offsetLeft);
   };
 };
 
@@ -50,9 +54,12 @@ function dragElement(element) {
 function closeWindow(element) {
     element.style.display = "none";
     deselect(element);
-    sessionStorage.removeItem(document.getElementById(element.id));
-    sessionStorage.removeItem(open);
-    sessionStorage.removeItem(0);
+    sessionStorage.removeItem(element.id);
+    sessionStorage.removeItem(element.id+"posX");
+    sessionStorage.removeItem(element.id+"posY");
+    sessionStorage.removeItem(element.id+"initX");
+    sessionStorage.removeItem(element.id+"initY");
+    
 
 };
 
@@ -64,16 +71,31 @@ function openWindow(element){
     element.style.zIndex = highIndex;
     topBar.style.zIndex = highIndex + 1;
     selectIcon(element);
-    var openWinds = document.getElementById(element.id);
-    console.log(openWinds);
-    sessionStorage.setItem(openWinds, openWinds);
+    sessionStorage.setItem(element.id, element.id);
     //console.log(sessionStorage);
 };
 
+//onLaunch Open
 function onLaunch(element) {
-  if (sessionStorage.getItem(element)){
-    //console.log(sessionStorage.getItem(element));
+  if (sessionStorage.getItem(element.id)){
+    setPos(element);
     openWindow(element);
+  };
+
+  function setPos(element) {
+    if(element.id == "wlcmescrn"){
+    element.style.top = (407 - 0) + "px";
+    element.style.left = (650 - 0) + "px";
+
+  } else {
+    var lancurX = sessionStorage.getItem(element.id+"currX");
+    var lancurY = sessionStorage.getItem(element.id+"currY");
+    var topSet = sessionStorage.getItem(element.id+"topSet");
+    var leftSet = sessionStorage.getItem(element.id+"leftSet");
+
+    element.style.top = (topSet - lancurY) + "px";
+    element.style.left = (leftSet - lancurX) + "px";
+    };
   };
 };
 
@@ -191,6 +213,13 @@ var notecontent = [
     <p>
     - IT WORKSSSSS HAHAHAHHAHAHA >:D<br/>
     - initWind implemented!
+    </p>`
+  },
+  {
+    date: "7/20/26",
+    content: `
+    <p>
+    - windows stay open and where you put them through reloads!
     </p>`
   },
 ];
