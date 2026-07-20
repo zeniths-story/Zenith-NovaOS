@@ -45,7 +45,7 @@ function dragElement(element) {
     sessionStorage.setItem(element.id+"currY", currY);
     sessionStorage.setItem(element.id+"topSet", element.offsetTop);
     sessionStorage.setItem(element.id+"leftSet", element.offsetLeft);
-    console.log(sessionStorage);
+    //console.log(sessionStorage);
   };
 };
 
@@ -56,20 +56,19 @@ function closeWindow(element) {
     element.style.display = "none";
     deselect(element);
     sessionStorage.removeItem(element.id + "open");
-  //  sessionStorage.removeItem(element.id+"currX");
-   // sessionStorage.removeItem(element.id+"currY");
-    //sessionStorage.removeItem(element.id+"topSet");
-   // sessionStorage.removeItem(element.id+"leftSet");
 };
 
 //onLaunch Open
+
 function onLaunch(element) {
   if (sessionStorage.getItem(element.id + "open")){
     setPos(element);
     openWindow(element);
-  
+    var notePage = sessionStorage.getItem("notesPage");
+    console.log(notePage)
+    //setNoteContent(notePage);
   };
-
+  
   function setPos(element) {
     if (!element.id == "wlcmescrn" && (sessionStorage.getItem("wlcmescrnleftSet") != 650 
     || sessionStorage.getItem("welcmscrntopSet") != 407)) {
@@ -229,9 +228,11 @@ var notecontent = [
 function setNoteContent(index) {
   var notetext = document.getElementById("noteText");
   notetext.innerHTML = notecontent[index].content;
+  console.log(index);
+  sessionStorage.setItem("notesPage", index);
 };
 
-setNoteContent(0)
+setNoteContent(0);
 
 function addToNoteBar(index) {
   var notebar = document.getElementById("notebar");
@@ -244,6 +245,8 @@ function addToNoteBar(index) {
 
   newDiv.addEventListener("click", function(){
     setNoteContent(index);
+
+
   });
   notebar.appendChild(newDiv);
 };
