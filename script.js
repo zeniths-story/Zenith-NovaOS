@@ -8,6 +8,7 @@ setInterval(function () {
 var welcomeScreen = document.getElementById("wlcmescrn");
 var novaNotes = document.getElementById("novaNotes");
 var zenApp = document.getElementById("zenApp");
+var settings = document.getElementById("settings");
 
 //dragging elements
 
@@ -45,7 +46,7 @@ function dragElement(element) {
     sessionStorage.setItem(element.id+"currY", currY);
     sessionStorage.setItem(element.id+"topSet", element.offsetTop);
     sessionStorage.setItem(element.id+"leftSet", element.offsetLeft);
-    //console.log(sessionStorage);
+    console.log(sessionStorage);
   };
 };
 
@@ -70,8 +71,7 @@ function onLaunch(element) {
   };
   
   function setPos(element) {
-    if (!element.id == "wlcmescrn" && (sessionStorage.getItem("wlcmescrnleftSet") != 650 
-    || sessionStorage.getItem("welcmscrntopSet") != 407)) {
+    if (!element.id == "wlcmescrn" && (sessionStorage.getItem("wlcmescrnleftSet") != 650 || sessionStorage.getItem("welcmscrntopSet") != 407)) {
     element.style.top = (407 - 0) + "px";
     element.style.left = (650 - 0) + "px";
     sessionStorage.setItem(element.id + "open", element.id);
@@ -156,6 +156,7 @@ function initWind(elementName){
 initWind(welcomeScreen);
 initWind(novaNotes);
 initWind(zenApp);
+initWind(settings);
 
 
 //Nova Notes
@@ -221,6 +222,13 @@ var notecontent = [
     content: `
     <p>
     - windows stay open and where you put them through reloads!
+    </p>`
+  },
+  {
+    date: "7/21/26",
+    content: `
+    <p>
+    - settings app basics implemented
     </p>`
   },
 ];
@@ -341,4 +349,60 @@ function addToZenBar(index) {
 
 for (let l=0; l< zencontent.length; l++) {
     addToZenBar(l);
+};
+
+
+//settings stuff
+var setcontent = [
+  {
+    pagename: "Backgrounds",
+    pagecont:`  
+    <br/>
+    <img src="./bubble-nebula.jpg" alt="Bubble Nebula">
+    <img src="./bue-nebula.jpg" alt="Blue Nebula">
+    <img src="./crabNebula.jpg" alt="Crab Nebula">
+    <img src="./lagoon-nebula.jpg" alt="Lagoon Nebula">
+    <img src="./orion-Nebula.jpg" alt="Orion Nebula">
+    <img src="./space.jpg" alt="Red/Blue Burst"
+    <img src="./spiral-nebula.jpg" alt="Spiral Nebula">
+    <img src="./spiral2-nebula.jpg" alt="Spiral Nebula 2">
+    <img src="./tapestry-of-blazing-starbirth.jpg" alt="Tapestry of Blazing Starbirth">
+  `
+  },
+  {
+    pagename:"Colors",
+    pagecont:`
+    <p> Set Main Color</p>
+    <p> Set Secondary Color</p>
+    <p> Set Tertiary Color</p>
+    <p> Set Main Text Color</p>
+    <p> Set Secondary Text Color</p>
+    `
+  },
+
+];
+
+function setSetContent(index) {
+  var setpge = document.getElementById("setpge");
+  setpge.innerHTML = setcontent[index].pagecont;
+};
+setSetContent(0)
+
+function addTosetBar(index) {
+  var setbar = document.getElementById("setbar");
+  var setcont = setcontent[index];
+  var snewDiv = document.createElement("div");
+  snewDiv.innerHTML = `
+  <p>
+  ${setcont.pagename}
+  </p>`;
+
+  snewDiv.addEventListener("click", function(){
+    setSetContent(index);
+  });
+  setbar.appendChild(snewDiv);
+};
+
+for (let l=0; l< setcontent.length; l++) {
+    addTosetBar(l);
 };

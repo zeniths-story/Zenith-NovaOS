@@ -104,6 +104,7 @@ body{
 
 .content{
     width: 350px;
+    max-height: 30vh;
     display: flex;
     flex-direction: row;
     text-align: left;
@@ -133,6 +134,7 @@ body{
 }
 
 .version{
+    display: flex;
     justify-content: center;
     align-self: flex-end;
 }
@@ -160,4 +162,32 @@ body{
 
 #zenapp{
     max-height: fit-content;
+}
+
+#setpge img{
+    max-width: 150px;
+}
+
+.botbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #5b1e7e;
+    color: #9734d1;
+    padding: 5px;
+    border-radius: 5px;
+    overflow-x: auto;
+    width: 100%;
+    max-height: 80px;
+    z-index: 1;
+    scrollbar-color: inherit;
+    scrollbar-gutter: stable;
+}
+.setapp{
+    width: fit-content;
+    max-width: 410px;
+    min-width: 100px;
+    height: fit-content;
+    max-height: 400px;  
+    min-height: 100px;
 }
