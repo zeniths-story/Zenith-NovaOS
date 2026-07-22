@@ -230,6 +230,12 @@ var notecontent = [
     <p>
     - settings app basics implemented
     </p>`
+  },{
+    date: "7/22/26",
+    content: `
+    <p>
+    - 
+    </p>`
   },
 ];
 
@@ -358,15 +364,15 @@ var setcontent = [
     pagename: "Backgrounds",
     pagecont:`  
     <br/>
-    <img src="./bubble-nebula.jpg" alt="Bubble Nebula">
-    <img src="./bue-nebula.jpg" alt="Blue Nebula">
-    <img src="./crabNebula.jpg" alt="Crab Nebula">
-    <img src="./lagoon-nebula.jpg" alt="Lagoon Nebula">
-    <img src="./orion-Nebula.jpg" alt="Orion Nebula">
-    <img src="./space.jpg" alt="Red/Blue Burst"
-    <img src="./spiral-nebula.jpg" alt="Spiral Nebula">
-    <img src="./spiral2-nebula.jpg" alt="Spiral Nebula 2">
-    <img src="./tapestry-of-blazing-starbirth.jpg" alt="Tapestry of Blazing Starbirth">
+    <img src="./bubble-nebula.jpg" alt="Bubble Nebula" class="bgimg">
+    <img src="./bue-nebula.jpg" alt="Blue Nebula" class="bgimg">
+    <img src="./crabNebula.jpg" alt="Crab Nebula" class="bgimg">
+    <img src="./lagoon-nebula.jpg" alt="Lagoon Nebula" class="bgimg">
+    <img src="./orion-Nebula.jpg" alt="Orion Nebula" class="bgimg">
+    <img src="./space.jpg" alt="Red/Blue Burst" class="bgimg">
+    <img src="./spiral-nebula.jpg" alt="Spiral Nebula" class="bgimg">
+    <img src="./spiral2-nebula.jpg" alt="Spiral Nebula 2" class="bgimg">
+    <img src="./tapestry-of-blazing-starbirth.jpg" alt="Tapestry of Blazing Starbirth" class="bgimg">
   `
   },
   {
@@ -406,3 +412,18 @@ function addTosetBar(index) {
 for (let l=0; l< setcontent.length; l++) {
     addTosetBar(l);
 };
+
+
+function getImg(element){
+var bg = document.getElementsByClassName("bgimg");
+bg.addEventListener("click", function(){ 
+  console.log(element);
+  selectbg(element);
+});
+};
+
+getImg(settings);
+
+function selectbg(element) {
+  console.log(element);
+}
