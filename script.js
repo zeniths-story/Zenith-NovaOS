@@ -378,11 +378,20 @@ var setcontent = [
   {
     pagename:"Colors",
     pagecont:`
-    <p> Set Main Color</p> <div id="currMainCol" class="currCol"></div>
-    <p> Set Secondary Color</p> <div id="currSecCol" class="currCol"></div>
-    <p> Set Tertiary Color</p> <div id="currTerCol" class="currCol"></div>
-    <p> Set Main Text Color</p> <div id="currMainTxtCol" class="currCol"></div>
-    <p> Set Secondary Text Color</p> <div id="currSecTxtCol" class="currCol"></div>
+    <div> <p> Set Main Color</p> 
+    <div id="currMainCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+
+    <div> <p> Set Secondary Color</p> 
+    <div id="currSecCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+
+    <div> <p> Set Tertiary Color</p> 
+    <div id="currTerCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+
+    <div> <p> Set Main Text Color</p> 
+    <div id="currMainTxtCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+
+    <div> <p> Set Secondary Text Color</p> 
+    <div id="currSecTxtCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
     `
   },
 
@@ -422,7 +431,7 @@ bg.addEventListener("click", function(){
 });
 };
 
-getImg(settings);
+//getImg(settings);
 
 function selectbg(element) {
   console.log(element);
