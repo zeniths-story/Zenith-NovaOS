@@ -231,10 +231,10 @@ var notecontent = [
     - settings app basics implemented
     </p>`
   },{
-    date: "7/22/26",
+    date: "7/22-23/26",
     content: `
     <p>
-    - 
+    - trying to get settings to work
     </p>`
   },
 ];
@@ -310,25 +310,25 @@ var zencontent = [
     <br/>
     <a href="https://zeniths-story.carrd.co" target="blank" > Learn More </a> </p>`,
   },
-   //{
-    //zentitle: "Headmates",
-    //zencontent: `
-    //<p>total HM count : 30<br/> HM Shown Here: 11
-    //<ul> 
-      //<li>Danger</li>
-      //<li>Ethan</li>
-      //<li>Evy/Opal</li>
-      //<li>Evi</li>
-      //<li>Hades</li>
-      //<li>Lumi</li>
-      //<li>Null</li>
-      //<li>Reid</li>
-      //<li>Rowan</li>
-      //<li>Rylen</li>
-      //<li>Tommy</li>
-   // </ul>
-   // <a href="https://zeniths-story.carrd.co/#fullabt" target="blank" > See More </a> </p>`,
-  //},
+   {
+    zentitle: "Head- mates",
+    zencontent: `
+    <p>total HM count : 30<br/> HM Shown Here: 11
+    <ul> 
+      <li>Danger</li>
+      <li>Ethan</li>
+      <li>Evy/Opal</li>
+      <li>Evi</li>
+      <li>Hades</li>
+      <li>Lumi</li>
+      <li>Null</li>
+      <li>Reid</li>
+      <li>Rowan</li>
+      <li>Rylen</li>
+      <li>Tommy</li>
+   </ul> <br/>
+   <a href="https://zeniths-story.carrd.co/#fullabt" target="blank"> Learn More </a> </p>`,
+  },
 ];
 
 function setZenContent(index) {
