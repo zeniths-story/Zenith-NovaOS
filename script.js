@@ -436,3 +436,50 @@ bg.addEventListener("click", function(){
 function selectbg(element) {
   console.log(element);
 }
+
+//pluralityAbout
+var plurcontent = [
+  {
+    pagename: "Plurality basics",
+    pagecont:`  
+    
+  `
+  },
+  {
+    pagename:"Good Links",
+    pagecont:`
+    
+    `
+  },
+  {
+    pagename:"Our Plurality",
+    pagecont:`
+
+   `
+  },
+];
+
+function setPlurContent(index) {
+  var plurpge = document.getElementById("plurpge");
+  plurpge.innerHTML = plurcontent[index].pagecont;
+};
+setPlurContent(0)
+
+function addToPlurBar(index) {
+  var plurbar = document.getElementById("plurbar");
+  var plurcont = plurcontent[index];
+  var snewDiv = document.createElement("div");
+  snewDiv.innerHTML = `
+  <p>
+  ${plurcont.pagename}
+  </p>`;
+
+  snewDiv.addEventListener("click", function(){
+    setPlurContent(index);
+  });
+  setbar.appendChild(snewDiv);
+};
+
+for (let l=0; l< plurcontent.length; l++) {
+    addToPlurBar(l);
+};
