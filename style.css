@@ -103,7 +103,7 @@ body{
 }
 
 .content{
-    width: 350px;
+    max-width: 350px;
     max-height: 30vh;
     display: flex;
     flex-direction: row;
@@ -121,6 +121,7 @@ body{
     border-radius: 5px;
     overflow-y: auto;
     max-width: 88px;
+    min-width: 50px;
     z-index: 1;
     scrollbar-color: inherit;
     scrollbar-gutter: stable;
@@ -132,6 +133,7 @@ body{
     overflow-y: auto;
     overflow-wrap: anywhere;
     scrollbar-gutter: stable;
+    padding: 5px;
 }
 
 .version{
@@ -203,4 +205,25 @@ body{
 .bgimg{
     border-radius: 20px;
     border: solid purple 3px;
+}
+
+#plural{
+     width: fit-content;
+    max-width: 500px;
+    min-width: 100px;
+    height: fit-content;
+    max-height: 350px;  
+    min-height: 100px;
+}
+
+#plural .content{
+    max-width: 450px;
+    max-height: 30vh;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-around;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    scrollbar-color: #9734d1 #000022;
 }

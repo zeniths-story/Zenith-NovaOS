@@ -9,6 +9,7 @@ var welcomeScreen = document.getElementById("wlcmescrn");
 var novaNotes = document.getElementById("novaNotes");
 var zenApp = document.getElementById("zenApp");
 var settings = document.getElementById("settings");
+var plurality = document.getElementById("plural");
 
 //dragging elements
 
@@ -157,6 +158,7 @@ initWind(welcomeScreen);
 initWind(novaNotes);
 initWind(zenApp);
 initWind(settings);
+initWind(plurality);
 
 
 //Nova Notes
@@ -442,7 +444,21 @@ var plurcontent = [
   {
     pagename: "Plurality basics",
     pagecont:`  
-    
+    <p>Plurality is most commonly known through it's disorders,
+     DID and OSDD-1. Like most things though, just because you experience plurality
+    it doesn't mean you have one of these disorders.
+    <br/><br/>
+    A numorus amount of psycologists agree that non-disorderd plurality could exist. 
+    Sysmeds however, will say you need to be <em>diagnosed</em> disordered to be plural. 
+    (As if the symptoms suddenly show up after a diagnosis. -_-*)
+    Very similar to transmeds saying you need dysphoria to be trans.
+    <br/><br/>
+    There are two main origins that plurality falls under:<br/>
+    - Traumagenic: Your plurality stems from repeated trauma or stress. More oftan than not, in childhood.<br/>
+    - Endogenic: Your plurality stems from something not trauma-related. 
+    Trauma may or may not be present, however it's not the reason for plurality.<br/><br/>
+
+     </p>
   `
   },
   {
@@ -472,12 +488,13 @@ function addToPlurBar(index) {
   snewDiv.innerHTML = `
   <p>
   ${plurcont.pagename}
+  <br/><br/>
   </p>`;
 
   snewDiv.addEventListener("click", function(){
     setPlurContent(index);
   });
-  setbar.appendChild(snewDiv);
+  plurbar.appendChild(snewDiv);
 };
 
 for (let l=0; l< plurcontent.length; l++) {
