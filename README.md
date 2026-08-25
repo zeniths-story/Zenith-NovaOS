@@ -28,5 +28,6 @@ a small OS which is space-themed because I love space :3
 >> Helpful links if you want to learn more or want to do a deeper dive
 >>
 >> Info on our plurality :3
+>
 
 No AI ever because Gen AI is bad. Why ask AI When I could ask my father?
