@@ -47,7 +47,7 @@ function dragElement(element) {
     sessionStorage.setItem(element.id+"currY", currY);
     sessionStorage.setItem(element.id+"topSet", element.offsetTop);
     sessionStorage.setItem(element.id+"leftSet", element.offsetLeft);
-    console.log(sessionStorage);
+    //console.log(sessionStorage);
   };
 };
 
@@ -67,7 +67,7 @@ function onLaunch(element) {
     setPos(element);
     openWindow(element);
     var notePage = sessionStorage.getItem("notesPage");
-    console.log(notePage)
+    //console.log(notePage)
    // setNoteContent(notePage);
   };
   
@@ -98,7 +98,7 @@ function openWindow(element){
     topBar.style.zIndex = highIndex + 1;
     selectIcon(element);
     sessionStorage.setItem(element.id + "open", element.id);
-    console.log(sessionStorage);
+    //console.log(sessionStorage);
 };
 
 function makeClose(element) {
@@ -159,6 +159,15 @@ initWind(novaNotes);
 initWind(zenApp);
 initWind(settings);
 initWind(plurality);
+
+function onLoad(){
+  initWind(welcomeScreen);
+initWind(novaNotes);
+initWind(zenApp);
+initWind(settings);
+initWind(plurality);
+
+}
 
 
 //Nova Notes
@@ -244,7 +253,7 @@ var notecontent = [
 function setNoteContent(index) {
   var notetext = document.getElementById("noteText");
   notetext.innerHTML = notecontent[index].content;
-  console.log(index);
+  //console.log(index);
   sessionStorage.setItem("notesPage", index);
 };
 
@@ -346,16 +355,17 @@ var setcontent = [
   {
     pagename: "Backgrounds",
     pagecont:`  
+    <div id="currbg"><div>
     <br/>
-    <img src="bgs/bubble-nebula.jpg" alt="Bubble Nebula" class="bgimg">
-    <img src="bgs/bue-nebula.jpg" alt="Blue Nebula" class="bgimg">
-    <img src="bgs/crabNebula.jpg" alt="Crab Nebula" class="bgimg">
-    <img src="bgs/lagoon-nebula.jpg" alt="Lagoon Nebula" class="bgimg">
-    <img src="bgs/orion-Nebula.jpg" alt="Orion Nebula" class="bgimg">
-    <img src="bgs/space.jpg" alt="Red/Blue Burst" class="bgimg">
-    <img src="bgs/spiral-nebula.jpg" alt="Spiral Nebula" class="bgimg">
-    <img src="bgs/spiral2-nebula.jpg" alt="Spiral Nebula 2" class="bgimg">
-    <img src="bgs/tapestry-of-blazing-starbirth.jpg" alt="Tapestry of Blazing Starbirth" class="bgimg">
+    <img id="bubb" src="bgs/bubble-nebula.jpg" alt="Bubble Nebula" class="bgimg">
+    <img id="bue" src="bgs/bue-nebula.jpg" alt="Blue Nebula" class="bgimg">
+    <img id="crab" src="bgs/crabNebula.jpg" alt="Crab Nebula" class="bgimg">
+    <img id="lagoon" src="bgs/lagoon-nebula.jpg" alt="Lagoon Nebula" class="bgimg">
+    <img id="orion" src="bgs/orion-Nebula.jpg" alt="Orion Nebula" class="bgimg">
+    <img id="space" src="bgs/space.jpg" alt="Red/Blue Burst" class="bgimg currbg">
+    <img id="spiral" src="bgs/spiral-nebula.jpg" alt="Spiral Nebula" class="bgimg">
+    <img id="spyral" src="bgs/spiral2-nebula.jpg" alt="Spiral Nebula 2" class="bgimg">
+    <img id="tapestry" src="bgs/tapestry-of-blazing-starbirth.jpg" alt="Tapestry of Blazing Starbirth" class="bgimg">
   `
   },
   {
@@ -389,16 +399,16 @@ setSetContent(0)
 function addTosetBar(index) {
   var setbar = document.getElementById("setbar");
   var setcont = setcontent[index];
-  var snewDiv = document.createElement("div");
-  snewDiv.innerHTML = `
+  var setDiv = document.createElement("div");
+  setDiv.innerHTML = `
   <p>
   ${setcont.pagename}
   </p>`;
 
-  snewDiv.addEventListener("click", function(){
+  setDiv.addEventListener("click", function(){
     setSetContent(index);
   });
-  setbar.appendChild(snewDiv);
+  setbar.appendChild(setDiv);
 };
 
 for (let l=0; l< setcontent.length; l++) {
@@ -406,18 +416,23 @@ for (let l=0; l< setcontent.length; l++) {
 };
 
 
-function getImg(element){
+function getImgs(){
 var bg = document.getElementsByClassName("bgimg");
-bg.addEventListener("click", function(){ 
-  console.log(element);
-  selectbg(element);
-});
+//console.log(bgid);
+ for(i=0; i< bg.length; i++){
+  var bgid = bg[i].id
+  console.log(bgid);
+
+  bg[i].addEventListener("click", function(){ 
+  console.log(bgid);
+  selectbg(bgid);
+});}
 };
 
-//getImg(settings);
+getImgs();
 
 function selectbg(element) {
-  console.log(element);
+  console.log(element.id);
 }
 
 //pluralityAbout
@@ -435,7 +450,7 @@ var plurcontent = [
     Very similar to transmeds saying you need dysphoria to be trans.
     <br/><br/>
     There are two main origins that plurality falls under:<br/>
-    - Traumagenic: Your plurality stems from repeated trauma or stress. 
+    - Traumagenic: Your plurality stems from repeated trauma or stress causing you to use dissociation as a coping mechinism. 
     More often than not, in childhood.<br/>
     - Endogenic: Your plurality stems from something not trauma-related. 
     Trauma may or may not be present, however it's not the reason for plurality.<br/><br/>
