@@ -290,7 +290,7 @@ var zencontent = [
     <p> 
     PHM, MHA, ASoUE, E:TM, TADC, Owl House, KotLC, Ranboo
     <br/>
-    <a href="https://zeniths-story.carrd.co/#handi" target="blank" > See More </a> </p>`,
+    <a href="https://zeniths-story.github.io/Zeniths-Site" target="blank" > See More </a> </p>`,
   },
   {
     zentitle: "Full About",
@@ -310,26 +310,7 @@ var zencontent = [
     <br/>
 
     <br/>
-    <a href="https://zeniths-story.carrd.co" target="blank" > Learn More </a> </p>`,
-  },
-   {
-    zentitle: "Head- mates",
-    zencontent: `
-    <p>total HM count : 30<br/> HM Shown Here: 11
-    <ul> 
-      <li>Danger</li>
-      <li>Ethan</li>
-      <li>Evy/Opal</li>
-      <li>Evi</li>
-      <li>Hades</li>
-      <li>Lumi</li>
-      <li>Null</li>
-      <li>Reid</li>
-      <li>Rowan</li>
-      <li>Rylen</li>
-      <li>Tommy</li>
-   </ul> <br/>
-   <a href="https://zeniths-story.carrd.co/#fullabt" target="blank"> Learn More </a> </p>`,
+    <a href="https://zeniths-story.github.io/Zeniths-Site" target="blank" > Learn More </a> </p>`,
   },
 ];
 
@@ -366,34 +347,34 @@ var setcontent = [
     pagename: "Backgrounds",
     pagecont:`  
     <br/>
-    <img src="./bubble-nebula.jpg" alt="Bubble Nebula" class="bgimg">
-    <img src="./bue-nebula.jpg" alt="Blue Nebula" class="bgimg">
-    <img src="./crabNebula.jpg" alt="Crab Nebula" class="bgimg">
-    <img src="./lagoon-nebula.jpg" alt="Lagoon Nebula" class="bgimg">
-    <img src="./orion-Nebula.jpg" alt="Orion Nebula" class="bgimg">
-    <img src="./space.jpg" alt="Red/Blue Burst" class="bgimg">
-    <img src="./spiral-nebula.jpg" alt="Spiral Nebula" class="bgimg">
-    <img src="./spiral2-nebula.jpg" alt="Spiral Nebula 2" class="bgimg">
-    <img src="./tapestry-of-blazing-starbirth.jpg" alt="Tapestry of Blazing Starbirth" class="bgimg">
+    <img src="bgs/bubble-nebula.jpg" alt="Bubble Nebula" class="bgimg">
+    <img src="bgs/bue-nebula.jpg" alt="Blue Nebula" class="bgimg">
+    <img src="bgs/crabNebula.jpg" alt="Crab Nebula" class="bgimg">
+    <img src="bgs/lagoon-nebula.jpg" alt="Lagoon Nebula" class="bgimg">
+    <img src="bgs/orion-Nebula.jpg" alt="Orion Nebula" class="bgimg">
+    <img src="bgs/space.jpg" alt="Red/Blue Burst" class="bgimg">
+    <img src="bgs/spiral-nebula.jpg" alt="Spiral Nebula" class="bgimg">
+    <img src="bgs/spiral2-nebula.jpg" alt="Spiral Nebula 2" class="bgimg">
+    <img src="bgs/tapestry-of-blazing-starbirth.jpg" alt="Tapestry of Blazing Starbirth" class="bgimg">
   `
   },
   {
     pagename:"Colors",
     pagecont:`
     <div> <p> Set Main Color</p> 
-    <div id="currMainCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+    <div id="currMainCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">. </div> </div>
 
     <div> <p> Set Secondary Color</p> 
-    <div id="currSecCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+    <div id="currSecCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">. </div> </div>
 
     <div> <p> Set Tertiary Color</p> 
-    <div id="currTerCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+    <div id="currTerCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">. </div> </div>
 
     <div> <p> Set Main Text Color</p> 
-    <div id="currMainTxtCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+    <div id="currMainTxtCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">. </div> </div>
 
     <div> <p> Set Secondary Text Color</p> 
-    <div id="currSecTxtCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;"> </div> </div>
+    <div id="currSecTxtCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">.</div> </div>
     `
   },
 
@@ -454,7 +435,8 @@ var plurcontent = [
     Very similar to transmeds saying you need dysphoria to be trans.
     <br/><br/>
     There are two main origins that plurality falls under:<br/>
-    - Traumagenic: Your plurality stems from repeated trauma or stress. More oftan than not, in childhood.<br/>
+    - Traumagenic: Your plurality stems from repeated trauma or stress. 
+    More often than not, in childhood.<br/>
     - Endogenic: Your plurality stems from something not trauma-related. 
     Trauma may or may not be present, however it's not the reason for plurality.<br/><br/>
 

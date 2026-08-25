@@ -9,7 +9,7 @@ body{
     color: #3a2dc4;  
     text-align: center;
     font-family: monospace, sans-serif;
-    background-image: url(space.jpg);
+    background-image: url(bgs/space.jpg);
     background-size: cover;
     height: 100vh;
     
@@ -22,7 +22,7 @@ body{
     border-radius: 0px;
     padding: 8px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     position: absolute;
     width: 100%;
 }
@@ -199,7 +199,10 @@ body{
 
 .currCol{
     border-radius: 4px;
+    width: 10px;
+    height: 10px;
     background-color: white;
+    border: solid white 3px;
 }
 
 .bgimg{
@@ -217,7 +220,7 @@ body{
 }
 
 #plural .content{
-    max-width: 450px;
+    max-width: 550px;
     max-height: 30vh;
     display: flex;
     flex-direction: row;
