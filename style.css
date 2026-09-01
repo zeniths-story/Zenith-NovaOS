@@ -200,9 +200,21 @@ body{
 .currCol{
     border-radius: 4px;
     width: 10px;
-    height: 10px;
+    height: fit-content;
     background-color: white;
     border: solid white 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.colormenu{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+    padding: 5px;
+    user-select: none;
+
 }
 
 .bgimg{

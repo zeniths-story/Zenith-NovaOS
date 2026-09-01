@@ -60,35 +60,6 @@ function closeWindow(element) {
     sessionStorage.removeItem(element.id + "open");
 };
 
-//onLaunch Open
-
-function onLaunch(element) {
-  if (sessionStorage.getItem(element.id + "open")){
-    setPos(element);
-    openWindow(element);
-    var notePage = sessionStorage.getItem("notesPage");
-    //console.log(notePage)
-   // setNoteContent(notePage);
-  };
-  
-  function setPos(element) {
-    if (!element.id == "wlcmescrn" && (sessionStorage.getItem("wlcmescrnleftSet") != 650 || sessionStorage.getItem("welcmscrntopSet") != 407)) {
-    element.style.top = (407 - 0) + "px";
-    element.style.left = (650 - 0) + "px";
-    sessionStorage.setItem(element.id + "open", element.id);
-
-   } else {
-    var lancurX = sessionStorage.getItem(element.id+"currX");
-    var lancurY = sessionStorage.getItem(element.id+"currY");
-    var topSet = sessionStorage.getItem(element.id+"topSet");
-    var leftSet = sessionStorage.getItem(element.id+"leftSet");
-
-    element.style.top = (topSet - lancurY) + "px";
-    element.style.left = (leftSet - lancurX) + "px";
-    };
-  };
-};
-
 //open def.
 
 function openWindow(element){
@@ -162,11 +133,10 @@ initWind(plurality);
 
 function onLoad(){
   initWind(welcomeScreen);
-initWind(novaNotes);
-initWind(zenApp);
-initWind(settings);
-initWind(plurality);
-
+  initWind(novaNotes);
+  initWind(zenApp);
+  initWind(settings);
+  initWind(plurality);
 }
 
 
@@ -246,6 +216,15 @@ var notecontent = [
     content: `
     <p>
     - trying to get settings to work
+    </p>`
+  },{
+    date: "9/1/26",
+    content: `
+    <p>
+    - back after working on personal site! <br/>
+    - you can now change the background! <br/>
+    - doesn't save between reloads <br/>
+    - (bug) if you switch to colors and switch back you can't select bgs until you reload<br/>
     </p>`
   },
 ];
@@ -371,28 +350,38 @@ var setcontent = [
   {
     pagename:"Colors",
     pagecont:`
-    <div> <p> Set Main Color</p> 
-    <div id="currMainCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">. </div> </div>
+    <div class="colormenu"> <p> Set Main Color</p> 
+    <input type="color" id="currMainCol" class="currCol" value="#000222" alpha/></div>
 
-    <div> <p> Set Secondary Color</p> 
-    <div id="currSecCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">. </div> </div>
+    <div class="colormenu"> <p> Set Secondary Color</p> 
+    <input type="color" id="currSecCol" class="currCol" value="#6d1365" alpha/></div>
 
-    <div> <p> Set Tertiary Color</p> 
-    <div id="currTerCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">. </div> </div>
+    <div class="colormenu"> <p> Set Tertiary Color</p> 
+    <input type="color" id="currTerCol" class="currCol" value="#5b1e7e" alpha/></div>
 
-    <div> <p> Set Main Text Color</p> 
-    <div id="currMainTxtCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">. </div> </div>
+    <div class="colormenu"> <p> Set Main Text Color</p> 
+    <input type="color" id="currMainTxtCol" class="currCol" value="#3a2dc4" alpha/> </div>
 
-    <div> <p> Set Secondary Text Color</p> 
-    <div id="currSecTxtCol" class="currCol" style="border-radius: 4px; background-color: white; width: fit-content;">.</div> </div>
+    <div class="colormenu"> <p> Set Secondary Text Color  </p> 
+    <input type="color"  id="currSecTxtCol" class="currCol" value="#9734d1" alpha/></div>
     `
   },
 
 ];
 
+
+var MainCol = "#000222";
+var SecCol = "#6d1365";
+var TerCol = "#5b1e7e";
+var MainTxtCol = "#3a2dc4";
+var SecTxtCol = "#9734d1";
+
 function setSetContent(index) {
   var setpge = document.getElementById("setpge");
   setpge.innerHTML = setcontent[index].pagecont;
+  getColor()
+  //loadbgs()
+  
 };
 setSetContent(0)
 
@@ -415,25 +404,60 @@ for (let l=0; l< setcontent.length; l++) {
     addTosetBar(l);
 };
 
-
-function getImgs(){
-var bg = document.getElementsByClassName("bgimg");
-//console.log(bgid);
- for(i=0; i< bg.length; i++){
-  var bgid = bg[i].id
-  console.log(bgid);
-
-  bg[i].addEventListener("click", function(){ 
-  console.log(bgid);
-  selectbg(bgid);
-});}
+function getImgs(element){
+  element.addEventListener("click", function(){ 
+  selectbg(element);
+});
 };
 
-getImgs();
-
 function selectbg(element) {
-  console.log(element.id);
+  //console.log(element.src);
+  var body = document.getElementById("body");
+  body.style.backgroundImage = "url(" + element.src + ")"
+  sessionStorage.setItem("bg", element);
+  console.log(sessionStorage.getItem("bg"))
 }
+var bubb = document.getElementById("bubb");
+var bue = document.getElementById("bue");
+var crab = document.getElementById("crab");
+var lagoon = document.getElementById("lagoon");
+var orion = document.getElementById("orion");
+var space = document.getElementById("space");
+var spiral = document.getElementById("spiral");
+var spyral = document.getElementById("spyral");
+var tapestry = document.getElementById("tapestry");
+
+function loadbgs(){
+  getImgs(bubb);
+  getImgs(bue);
+  getImgs(crab);
+  getImgs(lagoon);
+  getImgs(orion);
+  //getimgs(space);
+  getImgs(spiral);
+  getImgs(spyral);
+  getImgs(tapestry);
+}
+
+loadbgs()
+
+function getColor() {
+  var currColors = document.getElementsByClassName("currCol");
+  console.log(currColors);
+  for(i=0; i< currColors.length; i++){
+    console.log(currColors[i].id);
+    var watchcol = currColors[i].id
+
+    watchcol.addEventListener("input", function() {
+
+
+
+    })
+  }
+
+}
+
+getColor();
 
 //pluralityAbout
 var plurcontent = [
@@ -496,4 +520,35 @@ function addToPlurBar(index) {
 
 for (let l=0; l< plurcontent.length; l++) {
     addToPlurBar(l);
+};
+
+//onLaunch Open
+
+function onLaunch(element) {
+  if (sessionStorage.getItem(element.id + "open")){
+    setPos(element);
+    openWindow(element);
+    var savebg = sessionStorage.getItem("bg");
+    //selectbg(savebg);
+    var notePage = sessionStorage.getItem("notesPage");
+    //console.log(notePage)
+   // setNoteContent(notePage);
+  };
+
+   function setPos(element) {
+    if (!element.id == "wlcmescrn" && (sessionStorage.getItem("wlcmescrnleftSet") != 650 || sessionStorage.getItem("welcmscrntopSet") != 407)) {
+    element.style.top = (407 - 0) + "px";
+    element.style.left = (650 - 0) + "px";
+    sessionStorage.setItem(element.id + "open", element.id);
+
+   } else {
+    var lancurX = sessionStorage.getItem(element.id+"currX");
+    var lancurY = sessionStorage.getItem(element.id+"currY");
+    var topSet = sessionStorage.getItem(element.id+"topSet");
+    var leftSet = sessionStorage.getItem(element.id+"leftSet");
+
+    element.style.top = (topSet - lancurY) + "px";
+    element.style.left = (leftSet - lancurX) + "px";
+    };
+  };
 };
