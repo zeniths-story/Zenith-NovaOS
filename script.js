@@ -444,17 +444,16 @@ loadbgs()
 function getColor() {
   var currColors = document.getElementsByClassName("currCol");
   console.log(currColors);
+  
   for(i=0; i< currColors.length; i++){
     console.log(currColors[i].id);
+    console.log(watchcol);
     var watchcol = currColors[i].id
 
-    watchcol.addEventListener("input", function() {
-
-
-
-    })
+    //watchcol.addEventListener("input", function() {
+      // var colorvar = currColors[i].id -"curr"
+    ///})
   }
-
 }
 
 getColor();
